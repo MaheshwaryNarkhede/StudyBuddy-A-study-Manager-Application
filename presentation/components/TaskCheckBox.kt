@@ -1,6 +1,7 @@
 package com.example.studybuddy.presentation.components
 
 import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
@@ -20,21 +21,27 @@ import androidx.compose.ui.unit.dp
 fun TaskCheckBox(
     isComplete: Boolean,
     borderColor: Color,
+    checkColor: Color = Color.White,
     onCheckBoxClick: () -> Unit
 ) {
     Box(
         modifier = Modifier
-            .size(25.dp)
+            .size(32.dp) // Increased for better touch target
             .clip(CircleShape)
+            .background(
+                color = if (isComplete) borderColor else Color.Transparent,
+                shape = CircleShape
+            )
             .border(2.dp, borderColor, CircleShape)
             .clickable { onCheckBoxClick() },
         contentAlignment = Alignment.Center
     ) {
         AnimatedVisibility(visible = isComplete) {
             Icon(
-                modifier = Modifier.size(20.dp),
                 imageVector = Icons.Rounded.Check,
-                contentDescription = null
+                contentDescription = if (isComplete) "Task Completed" else "Task Incomplete",
+                tint = checkColor,
+                modifier = Modifier.size(18.dp)
             )
         }
     }
