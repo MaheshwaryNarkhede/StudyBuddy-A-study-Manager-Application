@@ -39,3 +39,65 @@ Developed entirely in **Kotlin**, the app leverages **Jetpack Compose** for its 
 - **Dagger Hilt (DI)**
 
 ---
+
+## File Structure  📂
+📦 com.example.studybuddy
+├── 📂 data
+│   ├── 📂 local
+│   │   ├── AppDatabase.kt
+│   │   ├── ColorListConverter.kt
+│   │   ├── SessionDao.kt
+│   │   ├── SubjectDao.kt
+│   │   └── TaskDao.kt
+│   └── 📂 repository
+│       ├── SessionRepositoryImpl.kt
+│       ├── SubjectRepositoryImpl.kt
+│       └── TaskRepositoryImpl.kt
+│
+├── 📂 di
+│   ├── DatabaseModule.kt
+│   ├── NotificationModule.kt
+│   └── RepositoryModule.kt
+│
+├── 📂 domain
+│   ├── 📂 model
+│   │   ├── Session.kt
+│   │   ├── Subject.kt
+│   │   ├── Task.kt
+│   │   └── TypeConverters.kt
+│   └── 📂 repository
+│       ├── SessionRepository.kt
+│       ├── SubjectRepository.kt
+│       └── TaskRepository.kt
+│
+├── 📂 presentation
+│   ├── 📂 components
+│   │   └── TaskCheckBox.kt
+│   ├── 📂 dashboard
+│   │   └── DashboardScreen.kt
+│   ├── 📂 session
+│   │   ├── SessionScreen.kt
+│   │   ├── SessionViewModel.kt
+│   │   ├── SessionEvent.kt
+│   │   └── SessionState.kt
+│   ├── 📂 subject
+│   │   ├── SubjectScreen.kt
+│   │   ├── SubjectViewModel.kt
+│   │   ├── SubjectEvent.kt
+│   │   └── SubjectState.kt
+│   ├── 📂 task
+│   │   ├── TaskScreen.kt
+│   │   ├── TaskViewModel.kt
+│   │   ├── TaskEvent.kt
+│   │   └── TaskState.kt
+│   └── 📂 theme
+│       ├── Color.kt
+│       ├── Theme.kt
+│       └── Typography.kt
+│
+├── 📂 util
+│   ├── Common.kt
+│   └── Constants.kt
+│
+├── MainActivity.kt
+└── StudyBuddyApp.kt
